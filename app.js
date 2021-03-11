@@ -42,9 +42,15 @@ function printShoopping(shoopingCar) {
 //Eliminar el producto con id 54657 del carrito de la compra.
 // var id = carrito.indexOf(54657);
 // var remove = carrito.splice(id, 1);
-// for (i = 0; i <= carrito.length; i++) {
-//     printShoopping(carrito[i])
-// }
+
+function remove(array, id) {
+    for (i = 0; i < array.length; i++) {
+        if (array[i].id === id) {
+            array.splice(i, 1)
+        }
+    }
+}
+remove(carrito,54657)
 
 //Calcular el total del carrito de la compra (el coste de una línea es precio * cantidad).
 // var total = 0;
@@ -56,7 +62,7 @@ function printShoopping(shoopingCar) {
 // Filtrar por los productos que sean prime.
 
 // for(i = 0; i < carrito.length; i++){
-//     if( carrito[i].premium === true){
+//     if( carrito[i].premium){
 //         printShoopping(carrito[i]);
 //     }
 // }
