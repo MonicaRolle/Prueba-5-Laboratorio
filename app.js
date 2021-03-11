@@ -62,7 +62,7 @@ function printShoopping(shoopingCar) {
 // }
 
 // Opcional:
-// Si todos los productos son prime mostrar un mensaje "Pedido sin gastos de envío", si no "Este pedido tiene gastos de envío".
+// Si todos los productos son prime mostrar un mensaje "Gastos de envío cero", si no "Con gastos de envío".
 // let premium = true;
 // for(producto of carrito){
 //     if(producto.premium === false){
@@ -71,24 +71,25 @@ function printShoopping(shoopingCar) {
 // }
 
 // if(premium === true){
-//     console.log("Pedido sin gastos de envio");
+//     console.log("Gastos de envío cero");
 // }else{
-//     console.log("Este pedido tiene gastos de envio")
+//     console.log("Con gastos de envio")
 // }
+
 // Mostrar el carrito en un listado de html básico.
 document.write("<h3>Lista de la compra</h3>");
 
-    for(producto of carrito){
-        document.write("<li>"+ producto.name + "</li>")
-    }
-// Aplicar un descuento del 5% si la compra es mayor de 100 €.
+for (producto of carrito) {
+    document.write("<li>" + producto.name + "</li>")
+}
+// Aplicar un descuento del 5% si la compra es mayor de 50 €.
 var total = 0;
-for(index of carrito){
+for (index of carrito) {
     total += index.price * index.count;
 }
 console.log("El total del carrito es: " + total + "€.")
 
-if(total > 100){
-    var discount = total *0.95;
-    console.log("Tiene un descuento del 5% y el total es: "+ discount)
+if (total > 50) {
+    var discount = total * 0.95;
+    console.log("Tiene un descuento del 5% y el total es: " + discount)
 }
