@@ -40,8 +40,7 @@ function printShoopping(shoopingCar) {
 }
 
 //Eliminar el producto con id 54657 del carrito de la compra.
-// var id = carrito.indexOf(54657);
-// var remove = carrito.splice(id, 1);
+
 
 function remove(array, id) {
     for (i = 0; i < array.length; i++) {
