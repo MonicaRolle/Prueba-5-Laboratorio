@@ -40,8 +40,8 @@ function printShoopping(shoopingCar) {
 }
 
 //Eliminar el producto con id 54657 del carrito de la compra.
-
-// var remove = carrito.splice(2, 1);
+// var id = carrito.indexOf(54657);
+// var remove = carrito.splice(id, 1);
 // for (i = 0; i <= carrito.length; i++) {
 //     printShoopping(carrito[i])
 // }
@@ -55,8 +55,40 @@ function printShoopping(shoopingCar) {
 
 // Filtrar por los productos que sean prime.
 
-for(i = 0; i < carrito.length; i++){
-    if( carrito.premium === true){
-        printShoopping(carrito[i]);
+// for(i = 0; i < carrito.length; i++){
+//     if( carrito[i].premium === true){
+//         printShoopping(carrito[i]);
+//     }
+// }
+
+// Opcional:
+// Si todos los productos son prime mostrar un mensaje "Pedido sin gastos de envío", si no "Este pedido tiene gastos de envío".
+// let premium = true;
+// for(producto of carrito){
+//     if(producto.premium === false){
+//         premium = false
+//     }
+// }
+
+// if(premium === true){
+//     console.log("Pedido sin gastos de envio");
+// }else{
+//     console.log("Este pedido tiene gastos de envio")
+// }
+// Mostrar el carrito en un listado de html básico.
+document.write("<h3>Lista de la compra</h3>");
+
+    for(producto of carrito){
+        document.write("<li>"+ producto.name + "</li>")
     }
+// Aplicar un descuento del 5% si la compra es mayor de 100 €.
+var total = 0;
+for(index of carrito){
+    total += index.price * index.count;
+}
+console.log("El total del carrito es: " + total + "€.")
+
+if(total > 100){
+    var discount = total *0.95;
+    console.log("Tiene un descuento del 5% y el total es: "+ discount)
 }
